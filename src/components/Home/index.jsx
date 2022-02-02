@@ -19,19 +19,21 @@ function Home() {
   }, []);
   return (
     <SHome>
-      <h3 className="date">-- 2022 --</h3>
-      <ul className="projectList">
-        {projectList.map((project) => (
-          <li className="projectItem">
-            <Project
-              key={project.id}
-              title={project.title}
-              picture={project.picture}
-              date={project.date}
-            />
-          </li>
-        ))}
-      </ul>
+      <div className="listCont">
+        <h3 className="date">-- 2022 --</h3>
+        <ul className="projectList">
+          {projectList.map((project) => (
+            <li className="projectItem">
+              <Project
+                key={project.id}
+                title={project.title}
+                picture={project.picture}
+                date={project.date}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
     </SHome>
   );
 }

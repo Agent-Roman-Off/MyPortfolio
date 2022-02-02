@@ -9,7 +9,9 @@ const SFooter = styled.footer`
   width: 100%;
   height: 70px;
   color: var(--yColor);
+  font-size: 12px;
   @media only screen and (min-width: 700px) {
+    font-size: 16px;
   }
 `;
 
