@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Playfair_Display';
+  src: url('./assets/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+}
+
+:root {
+  --mColor: #041c32;
+  --sColor: #04293a;
+  --s2Color: #064663;
+  --yColor: #ecb365;
+  --mFont: 'Playfair_Display', serif;
+
+  font-family: var(--mFont);
+}
