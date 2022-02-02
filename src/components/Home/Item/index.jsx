@@ -3,8 +3,11 @@ import SItem from './style';
 function Item() {
   return (
     <SItem>
-      <div>
-        <p>ITEM TITLE</p>
+      <div className="projectCont">
+        <div className="projectPic">
+          <img className="" src="" alt="" />
+        </div>
+        <p className="projectTitle">ITEM TITLE</p>
       </div>
     </SItem>
   );
