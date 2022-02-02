@@ -1,15 +1,20 @@
-import SItem from './style';
+import { PropTypes } from 'prop-types';
+import SProject from './style';
 
-function Item() {
+function Project({ title, picture }) {
   return (
-    <SItem>
+    <SProject>
       <div className="projectCont">
-        <div className="projectPic">
-          <img className="" src="" alt="" />
+        <div className="picContainer">
+          <img className="" src={picture} alt={title} />
         </div>
-        <p className="projectTitle">ITEM TITLE</p>
+        <p className="projectTitle">{title}</p>
       </div>
-    </SItem>
+    </SProject>
   );
 }
-export default Item;
+Project.propTypes = {
+  title: PropTypes.string.isRequired,
+  picture: PropTypes.string.isRequired,
+};
+export default Project;
