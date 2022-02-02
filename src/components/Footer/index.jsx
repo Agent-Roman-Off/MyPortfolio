@@ -3,7 +3,7 @@ import SFooter from './style';
 function Footer() {
   return (
     <SFooter>
-      <div>What do i write here?</div>
+      <p>Special thanks to Loic and Hacene from Wild Code School 💛</p>
     </SFooter>
   );
 }
