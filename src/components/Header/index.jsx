@@ -7,13 +7,11 @@ function Header() {
   return (
     <SHeader>
       <section className="menuCat">
-        <NavLink to="/resume">
-          <p>CV</p>
-        </NavLink>
+        <NavLink to="/resume">CV</NavLink>
       </section>
       <section className="myName">
         <NavLink to="/">
-          <p>Romain Brehon</p>
+          <h1>Romain Brehon</h1>
         </NavLink>
       </section>
       <section className="socials">

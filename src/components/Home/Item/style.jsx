@@ -7,12 +7,11 @@ const SProject = styled.article`
     margin: 10px;
     border-radius: 5px;
   }
-
   .picContainer {
     width: 100%;
     aspect-ratio: 1.8;
     border-radius: 5px;
-    border: 2px dotted white;
+    overflow: hidden;
   }
   .projectTitle {
     display: flex;
@@ -22,6 +21,10 @@ const SProject = styled.article`
     height: 30px;
     font-size: 20px;
     color: var(--mColor);
+  }
+  .picture {
+    width: 100%;
+    height: 100%;
   }
   @media only screen and (min-width: 700px) {
     .projectCont {
@@ -42,7 +45,6 @@ const SProject = styled.article`
       border-radius: 8px;
       transition: 0.7s;
     }
-
     .projectTitle {
       border-radius: 8px;
       height: 30px;
