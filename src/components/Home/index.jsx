@@ -5,27 +5,21 @@ import SHome from './style';
 
 function Home() {
   // FOR 2022 PROJECTS
+  const [project21List, setProject21List] = useState([]);
   const [project22List, setProject22List] = useState([]);
   useEffect(() => {
     axios
       .get(`http://localhost:5050/projects/2022`)
-      .then((res) => res.data)
-      .then((data) => {
+      .then(({ data }) => {
         setProject22List(data);
       })
       .catch((err) => {
         setProject22List('Woops, there isnt anything here yet...');
         console.log(err);
       });
-  }, []);
-
-  // FOR 2021 PROJECTS
-  const [project21List, setProject21List] = useState([]);
-  useEffect(() => {
     axios
       .get(`http://localhost:5050/projects/2021`)
-      .then((res) => res.data)
-      .then((data) => {
+      .then(({ data }) => {
         setProject21List(data);
       })
       .catch((err) => {

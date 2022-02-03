@@ -3,6 +3,7 @@ import styled from 'styled-components';
 const SResume = styled.section`
   width: 100%;
   background-color: var(--yColor);
+  min-height: 80vh;
   .cvSection {
     display: flex;
     justify-content: center;
@@ -18,6 +19,10 @@ const SResume = styled.section`
     cursor: pointer;
     margin: 5px;
     font-size: 20px;
+  }
+  .cv {
+    width: 300px;
+    aspect-ratio: 0.7;
   }
   @media only screen and (min-width: 700px) {
     .switchCont {

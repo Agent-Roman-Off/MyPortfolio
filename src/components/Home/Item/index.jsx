@@ -6,7 +6,7 @@ function Project({ title, picture }) {
     <SProject>
       <div className="projectCont">
         <div className="picContainer">
-          <img className="" src={picture} alt={title} />
+          <img className="picture" src={picture} alt={title} />
         </div>
         <p className="projectTitle">{title}</p>
       </div>
