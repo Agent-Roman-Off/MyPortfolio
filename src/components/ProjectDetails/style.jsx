@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 
-const SProjectPage = styled.section`
+const SProjectDetails = styled.section`
   width: 100%;
   background-color: var(--yColor);
   min-height: 80vh;
+  p {
+    color: var(--mColor);
+  }
   .switchCont {
     display: flex;
     justify-content: space-between;
@@ -47,7 +50,6 @@ const SProjectPage = styled.section`
     flex-direction: row;
     justify-content: flex-end;
     text-align: center;
-    border: 2px dotted red;
   }
   .detailsIcon {
     width: 20px;
@@ -57,7 +59,15 @@ const SProjectPage = styled.section`
     line-height: 20px;
     margin: 5px;
     padding: 5px;
-    border: 2px dotted green;
+  }
+  .descTitle {
+    color: var(--mColor);
+    font-size: 20px;
+    text-decoration: underline;
+  }
+  .descPara {
+    margin: 10px 0;
+    font-size: 16px;
   }
   .backArrowCont {
     display: none;
@@ -101,9 +111,16 @@ const SProjectPage = styled.section`
       font-size: 20px;
       line-height: 24px;
     }
+    .descTitle {
+      font-size: 30px;
+    }
+    .descPara {
+      margin: 20px 0;
+      font-size: 20px;
+    }
     .mobileBackArrowCont {
       display: none;
     }
   }
 `;
-export default SProjectPage;
+export default SProjectDetails;

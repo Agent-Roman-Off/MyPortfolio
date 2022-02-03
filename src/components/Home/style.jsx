@@ -20,6 +20,10 @@ const SHome = styled.section`
     align-items: center;
     padding: 10px;
   }
+  a {
+    color: var(--mColor);
+    text-decoration: none;
+  }
   @media only screen and (min-width: 700px) {
     .date {
       font-size: 30px;

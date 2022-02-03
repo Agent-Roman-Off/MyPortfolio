@@ -1,15 +1,32 @@
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { NavLink, useParams } from 'react-router-dom';
 import Duration from '../../assets/timeBlue.png';
 import Teammates from '../../assets/userBlue.png';
 import Arrow from '../../assets/arrowBlue.png';
-import SProjectPage from './style';
+import SProjectDetails from './style';
 
-function ProjectPage() {
+function ProjectDetails() {
   const [languages, setLanguages] = useState(false);
+  const [projectDetails, setProjectDetails] = useState({});
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5050/projects/${id}`)
+      .then(({ data }) => {
+        setProjectDetails(data[0]);
+      })
+      .catch((err) => {
+        setProjectDetails('Woops, there isnt anything here yet...');
+        console.log(err);
+      });
+  }, [id]);
+
   const toggleLanguages = () => setLanguages(!languages);
   return (
-    <SProjectPage>
+    <SProjectDetails>
       <div className="switchCont">
         <button className="langBtn" type="button" onClick={toggleLanguages}>
           {languages ? 'EN' : 'FR'}
@@ -20,26 +37,31 @@ function ProjectPage() {
           </NavLink>
         </div>
       </div>
+
       <div className="articleCont">
         <div className="infosCont">
           <div className="infosPicCont">
-            <img className="infosPic" src="" alt="project preview" />
+            <img
+              className="infosPic"
+              src={projectDetails?.picture}
+              alt="project preview"
+            />
           </div>
           <div className="infosDetailsCont">
             <div className="leftDetailsCont">
-              <p>April 2010</p>
+              <p>{projectDetails?.date}</p>
             </div>
             <div className="rightDetailsCont">
               <div className="rightDetailsLine">
-                <p>Ppl involved</p>
+                <p>{projectDetails?.nbrPeople}</p>
                 <img className="detailsIcon" src={Teammates} alt="teammates" />
               </div>
               <div className="rightDetailsLine">
-                <p>Time limit</p>
+                <p>{projectDetails?.timeLimit}</p>
                 <img className="detailsIcon" src={Duration} alt="duration" />
               </div>
               <div className="rightDetailsLine">
-                <p>Link to project</p>
+                <p>{projectDetails?.link}</p>
               </div>
             </div>
           </div>
@@ -50,7 +72,8 @@ function ProjectPage() {
           </div>
         </div>
         <div className="descCont">
-          <p>
+          <h3 className="descTitle">{projectDetails?.title}</h3>
+          <p className="descPara">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -61,8 +84,7 @@ function ProjectPage() {
           </p>
         </div>
       </div>
-    </SProjectPage>
+    </SProjectDetails>
   );
 }
-
-export default ProjectPage;
+export default ProjectDetails;

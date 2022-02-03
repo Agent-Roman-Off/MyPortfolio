@@ -1,10 +1,10 @@
+import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Project from './Item';
 import SHome from './style';
 
 function Home() {
-  // FOR 2022 PROJECTS
   const [project21List, setProject21List] = useState([]);
   const [project22List, setProject22List] = useState([]);
   useEffect(() => {
@@ -27,6 +27,7 @@ function Home() {
         console.log(err);
       });
   }, []);
+
   return (
     <SHome>
       {/* 2022 PROJECTS */}
@@ -35,12 +36,17 @@ function Home() {
         <ul className="projectList">
           {project22List.map((project) => (
             <li className="projectItem">
-              <Project
-                key={project.id}
-                title={project.title}
-                picture={project.picture}
-                date={project.date}
-              />
+              <NavLink to={`/projects/${project.id}`}>
+                <Project
+                  key={project.id}
+                  title={project.title}
+                  picture={project.picture}
+                  date={project.date}
+                  link={project.link}
+                  nbrPeople={project.nbrPeople}
+                  timeLimit={project.timeLimit}
+                />
+              </NavLink>
             </li>
           ))}
         </ul>
@@ -52,12 +58,14 @@ function Home() {
         <ul className="projectList">
           {project21List.map((project) => (
             <li className="projectItem">
-              <Project
-                key={project.id}
-                title={project.title}
-                picture={project.picture}
-                date={project.date}
-              />
+              <NavLink to={`/projects/${project.id}`}>
+                <Project
+                  key={project.id}
+                  title={project.title}
+                  picture={project.picture}
+                  date={project.date}
+                />
+              </NavLink>
             </li>
           ))}
         </ul>
