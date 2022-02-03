@@ -10,17 +10,20 @@ const SResume = styled.section`
   .hidden {
     display: none;
   }
+  .langBtn {
+    border: none;
+    background-color: transparent;
+    color: var(--mColor);
+    font-family: var(--Font);
+    cursor: pointer;
+    margin: 5px;
+    font-size: 20px;
+  }
   @media only screen and (min-width: 700px) {
     .switchCont {
     }
     .langBtn {
-      border: none;
       margin: 10px;
-      background-color: transparent;
-      color: var(--mColor);
-      font-family: var(--Font);
-      font-size: 20px;
-      cursor: pointer;
     }
     .langBtn:hover {
       background-color: var(--mColor);
