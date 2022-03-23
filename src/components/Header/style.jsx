@@ -45,6 +45,7 @@ const SHeader = styled.header`
   }
 
   @media only screen and (min-width: 700px) {
+    height: 10vh;
     a {
       cursor: pointer;
     }

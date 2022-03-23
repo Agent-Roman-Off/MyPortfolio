@@ -13,8 +13,9 @@ function ProjectDetails() {
   const { id } = useParams();
 
   useEffect(() => {
+    const lang = languages ? 'EN' : 'FR';
     axios
-      .get(`http://localhost:5050/projects/${id}`)
+      .get(`http://localhost:5050/projects/${id}?language=${lang}`)
       .then(({ data }) => {
         setProjectDetails(data[0]);
       })
@@ -22,14 +23,14 @@ function ProjectDetails() {
         setProjectDetails('Woops, there isnt anything here yet...');
         console.log(err);
       });
-  }, [id]);
+  }, [id, languages]);
 
   const toggleLanguages = () => setLanguages(!languages);
   return (
     <SProjectDetails>
       <div className="switchCont">
         <button className="langBtn" type="button" onClick={toggleLanguages}>
-          {languages ? 'EN' : 'FR'}
+          {languages ? 'FR' : 'EN'}
         </button>
         <div className="mobileBackArrowCont">
           <NavLink to="/">
@@ -49,7 +50,11 @@ function ProjectDetails() {
           </div>
           <div className="infosDetailsCont">
             <div className="leftDetailsCont">
-              <p>{projectDetails?.date}</p>
+              <p>
+                {projectDetails?.date
+                  ? `${projectDetails?.date.split('T')[0]}`
+                  : ''}
+              </p>
             </div>
             <div className="rightDetailsCont">
               <div className="rightDetailsLine">
@@ -61,7 +66,9 @@ function ProjectDetails() {
                 <img className="detailsIcon" src={Duration} alt="duration" />
               </div>
               <div className="rightDetailsLine">
-                <p>{projectDetails?.link}</p>
+                <a href={projectDetails?.link} target="_blank" rel="noreferrer">
+                  {languages ? 'Link to project' : 'Lien vers le projet'}
+                </a>
               </div>
             </div>
           </div>
@@ -73,15 +80,7 @@ function ProjectDetails() {
         </div>
         <div className="descCont">
           <h3 className="descTitle">{projectDetails?.title}</h3>
-          <p className="descPara">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+          <p className="descPara">{projectDetails?.description}</p>
         </div>
       </div>
     </SProjectDetails>
