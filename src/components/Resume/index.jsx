@@ -1,6 +1,10 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import CVFR from '../../assets/CVFR.png';
 import CVEN from '../../assets/CVEN.png';
+import CVENpdf from '../../assets/CVEN.pdf';
+import CVFRpdf from '../../assets/CVFR.pdf';
+import dlBtn from '../../assets/downloadYellow.png';
 import SResume from './style';
 
 function Resume() {
@@ -14,16 +18,12 @@ function Resume() {
         </button>
       </div>
       <section className="cvSection">
-        <img
-          className={languages ? 'cv' : 'hidden'}
-          src={CVFR}
-          alt="CV français"
-        />
-        <img
-          className={languages ? 'hidden' : 'cv'}
-          src={CVEN}
-          alt="English resume"
-        />
+        <button className="dlBtn" type="button">
+          <Link to={languages ? CVFRpdf : CVENpdf} target="_blank" download>
+            <img className="dlPic" src={dlBtn} alt="download" />
+          </Link>
+        </button>
+        <img className="cv" src={languages ? CVFR : CVEN} alt="CV français" />
       </section>
     </SResume>
   );

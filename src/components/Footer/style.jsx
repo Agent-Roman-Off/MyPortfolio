@@ -11,6 +11,7 @@ const SFooter = styled.footer`
   color: var(--yColor);
   font-size: 12px;
   @media only screen and (min-width: 700px) {
+    height: 10vh;
     font-size: 16px;
   }
 `;

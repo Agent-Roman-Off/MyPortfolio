@@ -45,11 +45,19 @@ const SProjectDetails = styled.section`
     justify-content: space-between;
     padding: 5px;
   }
+
+  .leftDetailsCont .rightDetailsCont {
+    width: 100%;
+  }
   .rightDetailsLine {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     text-align: center;
+  }
+  .rightDetailsLine a {
+    text-decoration: none;
+    color: var(--mColor);
   }
   .detailsIcon {
     width: 20px;
@@ -73,6 +81,7 @@ const SProjectDetails = styled.section`
     display: none;
   }
   @media only screen and (min-width: 700px) {
+    min-height: 80vh;
     .langBtn {
       cursor: pointer;
     }
