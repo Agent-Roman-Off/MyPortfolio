@@ -84,6 +84,7 @@ const SProjectDetails = styled.section`
     min-height: 80vh;
     .langBtn {
       cursor: pointer;
+      margin: 10px;
     }
     .langBtn:hover {
       background-color: var(--mColor);

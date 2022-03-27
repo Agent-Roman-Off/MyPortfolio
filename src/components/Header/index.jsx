@@ -16,12 +16,20 @@ function Header() {
       </section>
       <section className="socials">
         <div className="picCont">
-          <a href="https://www.linkedin.com/in/romain-brehon/">
+          <a
+            href="https://www.linkedin.com/in/romain-brehon/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img className="socialPic" src={liLogo} alt="linkedin link" />
           </a>
         </div>
         <div className="picCont">
-          <a href="https://github.com/Agent-Roman-Off">
+          <a
+            href="https://github.com/Agent-Roman-Off"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img className="socialPic" src={ghLogo} alt="github link" />
           </a>
         </div>
