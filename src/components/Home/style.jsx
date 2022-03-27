@@ -25,6 +25,7 @@ const SHome = styled.section`
     text-decoration: none;
   }
   @media only screen and (min-width: 700px) {
+    min-height: 80vh;
     .date {
       font-size: 30px;
     }
