@@ -35,7 +35,7 @@ function Resume() {
   const toggleLanguages = () => setLanguages(!languages);
   return (
     <SResume>
-      {/* HBUTTONS & TOP TITLES */}
+      {/* BUTTONS & TOP TITLES */}
       <div className="switchCont">
         <button className="langBtn" type="button" onClick={toggleLanguages}>
           {languages ? 'EN' : 'FR'}
@@ -50,18 +50,21 @@ function Resume() {
         </a>
       </div>
       <div className="titleSection">
-        <h3 className="trainTitle">{languages ? 'Formation' : 'Training'}</h3>
-        <h3 className="expTitle">
+        <h3 className="desktopTitle">{languages ? 'Formation' : 'Training'}</h3>
+        <h3 className="desktopTitle">
           {languages
             ? 'Expérience professionnelle'
             : 'Professionnal experience'}
         </h3>
-        <h3 className="skillsTitle">{languages ? 'Compétences' : 'Skills'}</h3>
+        <h3 className="desktopTitle">{languages ? 'Compétences' : 'Skills'}</h3>
       </div>
       {/* TRAINING & EXPERIENCE */}
       <div className="detailsSection">
-        <div className="scrollWindow">
+        <div className="expScrollWindow">
           <div className="trainingSection">
+            <h3 className="mobileTitle">
+              {languages ? 'Formation' : 'Training'}
+            </h3>
             <article className="trainArt">
               <p className="date">09/2021 - 02/2022</p>
               <p className="jobName">
@@ -175,6 +178,11 @@ function Resume() {
             </article>
           </div>
           <div className="expSection">
+            <h3 className="mobileTitle">
+              {languages
+                ? 'Expérience professionnelle'
+                : 'Professionnal experience'}
+            </h3>
             <article className="expArt emptyArt" />
             <article className="expArt emptyArt" />
             <article className="expArt">
@@ -228,8 +236,11 @@ function Resume() {
           </div>
         </div>
         {/* SKILLS */}
-        <div className="scrollWindow">
+        <div className="skillsScrollWindow">
           <div className="skillsSection">
+            <h3 className="mobileTitle">
+              {languages ? 'Compétences' : 'Skills'}
+            </h3>
             <h5 className="codingTitle">{languages ? 'Codage' : 'Coding'}</h5>
             <ul>
               <li>
@@ -352,7 +363,9 @@ function Resume() {
       </div>
       {/* HOBBIES */}
       <div className="hobbiesSection">
-        <h3 className="hobbiesTitle">{languages ? 'Loisirs' : 'Hobbies'}</h3>
+        <h3 className="mobileTitle desktopTitle">
+          {languages ? 'Loisirs' : 'Hobbies'}
+        </h3>
         <h5 className="gameTitle">
           {languages ? 'Jeux vidéos' : 'Video Games'}
         </h5>
